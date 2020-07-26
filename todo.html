@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Todo App</title>
+    <link rel="icon" href="todo-list-48.png" type="image/icon" >
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <style>
+        *:focus {
+            outline: none;
+        }
+        body{
+            background-color: #FEC6A9;
+        }
+        #input{
+            border-top: none;
+            border-left: none;
+            border-right: none;
+            border-bottom-color: tomato;
+            padding: 5px;
+            -webkit-transition: width .35s ease-in-out;
+            transition: width .35s ease-in-out;
+        }
+        #input:focus{
+            width: 250px;
+            border-bottom-color: black;
+        }
+        div.main{
+            text-align: center;
+            margin: 0 auto;
+            background-color: ghostwhite;
+            border-radius: 20px;
+            width: max-content;
+            padding: 10px 80px 30px 80px;
+        }
+        ul{
+            text-align: left;
+            font-size: larger;
+        }
+        li{
+            list-style:disc
+        }
+        .button{
+            overflow: hidden;
+            border: none;
+            background-color: darksalmon;
+            color: whitesmoke;
+            border-radius: 2px;
+            padding: 3px 5px;
+            float: right;
+            margin: 2px;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <!-- Image and text -->
+        <nav class="navbar navbar-light bg-light">
+            <a class="navbar-brand" href="#">
+                <img src="todo-list-48.png" width="30" height="30" class="d-inline-block align-top mt-1" alt="" loading="lazy">
+                <span class="navbar-brand mb-0 h1 align-top">Todo App</span>
+            </a>
+        </nav>
+    </div>
+    <div class="main container mt-5">
+        <h1>Todo List</h1>
+        <input type="text" id="input">
+        <input type="button" class="button" value="Delete All" onclick="delAll()">
+        <input type="button" class="button" value="Add" onclick="add()">
+        <ul id="ul"></ul>
+    </div>
+    <script>
+        var ul = document.getElementById("ul");
+        var li = document.createElement("li");
+        var input = document.getElementById("input");
+        function add() {    
+            if (input.value === "") {
+                alert("Please Enter A To-do")
+            } else {
+                var text = document.createTextNode(input.value);
+                var btnEdit = document.createElement("button");
+                var editText = document.createTextNode("Edit");
+                var btnDel = document.createElement("button");
+                var delText = document.createTextNode("Delete");
+                li.append(text);
+                btnEdit.append(editText);
+                btnEdit.setAttribute('class','button')
+                btnDel.append(delText);
+                btnDel.setAttribute('class','button');
+                li.append(btnDel);
+                li.append(btnEdit)
+                ul.append(li);
+                btnDel.onclick = function del() {  
+                    li.remove()
+                }
+                btnEdit.onclick = function(){
+                    li.innerHTML = prompt();
+                    li.append(btnDel);
+                    li.append(btnEdit)
+                }    
+            }
+        }
+    function delAll() {
+       
+    ul.innerHTML=' '
+    }
+    </script>
+</body>
+</html>
