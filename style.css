@@ -1,0 +1,55 @@
+*:focus {
+    outline: none;
+}
+body{
+    background-color: #FEC6A9;
+}
+#todo-item{
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    border-bottom-color: tomato;
+    padding: 5px;
+    -webkit-transition: width .35s ease-in-out;
+    transition: width .35s ease-in-out;
+}
+div.main{
+    text-align: center;
+    margin: 0 auto;
+    background-color: ghostwhite;
+    border-radius: 20px;
+    width: max-content;
+    padding: 10px 80px 30px 80px;
+}
+ul{
+    text-align: left;
+    font-size: larger;
+}
+li{
+    list-style: none;
+}
+.btn{
+    overflow: hidden;
+    border: none;
+    background-color: darksalmon;
+    color: whitesmoke;
+    border-radius: 2px;
+    padding: 3px 5px;
+    float: right;
+    margin: 2px;
+}
+.checkbox-round {
+    width: 1em;
+    height: 1em;
+    background-color: white;
+    border-radius: 50%;
+    vertical-align: middle;
+    border: 1px solid #ddd;
+    -webkit-appearance: none;
+    margin-right: 5px;
+    
+}
+
+.checkbox-round:checked {
+    background-color: gray;
+}
