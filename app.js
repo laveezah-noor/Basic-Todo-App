@@ -60,7 +60,6 @@ function deleteItem(e){
 }
 
 function editItem(e) {
-    console.log(e.parentNode.childNodes[1].nodeValue)
     var val = prompt("Enter updated value",e.parentNode.childNodes[1].nodeValue)
     var editTodo = {
         value : val,
