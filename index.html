@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Todo App</title>
+    <link rel="icon" href="todo-list-48.png" type="image/icon" >
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">    
+    <link rel="stylesheet" href="style.css">
+    <script src="https://www.gstatic.com/firebasejs/7.19.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.19.1/firebase-database.js"></script>
+    <script>
+        // Your web app's Firebase configuration
+        var firebaseConfig = {
+          apiKey: "AIzaSyAo5olQdUK6UoXJrm3iZr55w0qMZpr3omg",
+          authDomain: "onlinewebmobile-460f1.firebaseapp.com",
+          databaseURL: "https://onlinewebmobile-460f1.firebaseio.com",
+          projectId: "onlinewebmobile-460f1",
+          storageBucket: "onlinewebmobile-460f1.appspot.com",
+          messagingSenderId: "66474530011",
+          appId: "1:66474530011:web:2afa2db1f58a769058a8fe",
+          measurementId: "G-L7RB7TJJ53"
+        };
+        // Initialize Firebase
+        firebase.initializeApp(firebaseConfig);
+        //firebase.analytics();
+    </script>
+    
+</head>
+<body>
+    <div class="header">
+        <!-- Image and text -->
+        <nav class="navbar navbar-light bg-light">
+            <a class="navbar-brand" href="#">
+                <img src="todo-list-48.png" width="30" height="30" class="d-inline-block align-top mt-1" alt="" loading="lazy">
+                <span class="navbar-brand mb-0 h1 align-top">Todo App</span>
+            </a>
+        </nav>
+    </div>
+    <div class="main container mt-5">
+        <h1>Todo List</h1>
+        <input type="text" id="todo-item">
+        <input type="button" class="btn" value="Delete All" onclick="deleteAll()">
+        <input type="button" class="btn" value="Add" id="add" onclick="addTodo()">
+        <ul class="list-group list-group-flush mt-2" id="list"></ul>
+    </div>
+    <script src="app.js"></script>
+</body>
+</html>
